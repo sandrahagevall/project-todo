@@ -1,20 +1,15 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-import { format } from "date-fns"
 
 export const useTodoStore = create(
   persist(
-    (set, get) => ({
-      tasks: [],
+    (set) => ({
+      todos: [],
       darkMode: false,
       categories: ["General", "Work", "Home"],
 
-      loadTasks: () => {
-
-      },
-
-      addTask: (text, category = "General", dueDate = null) => {
-        const newTask = {
+      addTodo: (text, category = "General", dueDate = null) => {
+        const newTodo = {
           id: Date.now().toString(),
           text,
           completed: false,
@@ -22,61 +17,43 @@ export const useTodoStore = create(
           category,
           dueDate: dueDate ? new Date(dueDate).toISOString() : null,
         }
-        set((state) => ({ tasks: [...state.tasks, newTask] }))
+        set((state) => ({ todos: [...state.todos, newTodo] }))
       },
 
-      toggleTaskCompletion: (id) => {
+      toggleTodo: (id) => {
         set((state) => ({
-          tasks: state.tasks.map((task) =>
-            task.id === id ? { ...task, completed: !task.completed } : task
+          todos: state.todos.map((todo) =>
+            todo.id === id ? { ...todo, completed: !todo.completed } : todo
           ),
         }))
       },
 
-      deleteTask: (id) => {
+      completeTodo: (id) => {
         set((state) => ({
-          tasks: state.tasks.filter((task) => task.id !== id),
+          todos: state.todos.map((todo) =>
+            todo.id === id ? { ...todo, completed: true } : todo
+          ),
         }))
       },
 
-      completeAllTasks: () => {
+      deleteTodo: (id) => {
         set((state) => ({
-          tasks: state.tasks.map((task) => ({ ...task, completed: true })),
+          todos: state.todos.filter((todo) => todo.id !== id),
+        }))
+      },
+
+      completeAllTodos: () => {
+        set((state) => ({
+          todos: state.todos.map((todo) => ({ ...todo, completed: true })),
         }))
       },
 
       toggleDarkMode: () => {
         set((state) => ({ darkMode: !state.darkMode }))
       },
-
-      getFormattedDate: (dateString) => {
-        return format(new Date(dateString), "MMM d, yyyy h:mm a")
-      },
-
-      isOverDue: (dueDate) => {
-        if (!dueDate) return false
-        const now = new Date()
-        return new Date(dueDate) < now
-      },
-
-      getTasksByCategory: (category) => {
-        return get().tasks.filter((task) => task.category === category)
-      },
-
-      getUncompletedCount: () => {
-        return get().tasks.filter((task) => !task.completed)
-      },
-
-      getCompletedCount: () => {
-        return get().tasks.filter((task) => task.completed)
-      },
-
-      getTotalTasksCount: () => {
-        return get().tasks.length
-      },
     }),
     {
-      name: "todo-storage", // unique name
+      name: "todo-storage",
     }
   )
 )
