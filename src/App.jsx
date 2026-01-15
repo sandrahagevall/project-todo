@@ -1,14 +1,29 @@
-import React from "react"
+import { useState } from "react"
 import { Heading } from "./components/Heading"
-import { TodoForm } from "./components/TodoForm"
 import { TodoList } from "./components/TodoList"
+import { AddTodoToggle } from "./components/AddTodoToggle"
+import { TodoForm } from "./components/TodoForm"
 
 export const App = () => {
+  const [isAdding, setIsAdding] = useState(false)
+
   return (
-    <div className="container mx-auto max-w-lg p-4">
-      <Heading />
-      <TodoForm />
-      <TodoList />
-    </div>
+    <main className="min-h-screen grid-bg flex justify-center py-10">
+      <section className="w-full max-w-md bg-white rounded-2xl shadow-md flex flex-col">
+        <Heading />
+
+        {/* INNEHÅLL */}
+        <div className="flex-1 px-4 py-3 space-y-4">
+          {isAdding && (
+            <TodoForm onClose={() => setIsAdding(false)} />
+          )}
+
+          <TodoList isAdding={isAdding} />
+        </div>
+
+        {/* BOTTON */}
+        <AddTodoToggle onAdd={() => setIsAdding(true)} />
+      </section>
+    </main>
   )
 }

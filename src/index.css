@@ -4,6 +4,14 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+.grid-bg {
+  background-color: #f8fafc;
+  background-image:
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 .header-bg {
   background-image:
     linear-gradient(rgba(88, 80, 236, 0.7),

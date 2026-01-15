@@ -9,7 +9,7 @@ export const Heading = () => {
   const completed = todos.filter((todo) => todo.completed).length
   const uncompleted = totalTodos - completed
 
-  const today = format(new Date(), "MMMM dd, yyyy")
+  const today = format(new Date(), "dd MMMM")
 
   return (
     <header className="header-bg text-white p-6 rounded-xl mb-6 min-h-200px">
