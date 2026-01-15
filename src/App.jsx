@@ -12,7 +12,6 @@ export const App = () => {
       <section className="w-full max-w-md bg-white rounded-2xl shadow-md flex flex-col">
         <Heading />
 
-        {/* INNEHÅLL */}
         <div className="flex-1 px-4 py-3 space-y-4">
           {isAdding && (
             <TodoForm onClose={() => setIsAdding(false)} />
@@ -21,7 +20,6 @@ export const App = () => {
           <TodoList isAdding={isAdding} />
         </div>
 
-        {/* BOTTON */}
         <AddTodoToggle onAdd={() => setIsAdding(true)} />
       </section>
     </main>

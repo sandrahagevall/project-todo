@@ -6,6 +6,7 @@ import { TodoSkeleton } from "./TodoSkeleton"
 export const TodoList = ({ isAdding }) => {
   const todos = useTodoStore((state) => state.todos)
 
+
   if (isAdding) {
     return null
   }
@@ -14,7 +15,7 @@ export const TodoList = ({ isAdding }) => {
   if (todos.length === 0) {
     return (
       <ul className="space-y-2 mt-0">
-        <p className="text-center mb-2 text-gray-500">No todos available. Add a todo to get started!</p>
+        <p className="text-center mb-2 text-gray-500">No todos available. Add a to-do to get started!</p>
 
         {Array.from({ length: 4 }).map((_, index) => (
           <TodoSkeleton key={index} />

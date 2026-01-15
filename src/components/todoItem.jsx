@@ -32,7 +32,7 @@ export const TodoItem = ({ todo }) => {
       <span className={`flex-1 ml-2 ${todo.completed ? "line-through text-gray-500" : ""}`}>
         {todo.text}
       </span>
-      <div className="text-xs text-gray-400 mt-1 space-y-0.5">
+      <div className="text-xs text-gray-400 mt-1">
         <p>Created: {createdAt}</p>
         {dueDate && <p>Due: {dueDate}</p>}
       </div>
