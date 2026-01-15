@@ -3,3 +3,11 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+.header-bg {
+  background-image:
+    linear-gradient(rgba(88, 80, 236, 0.7),
+      rgba(59, 130, 246, 0.7));
+  background-size: cover;
+  background-position: center;
+}
