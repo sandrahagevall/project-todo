@@ -18,7 +18,7 @@ export const TodoForm = ({ onClose }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 rounded-xl shadow space-y-3"
+      className="bg-white p-4 rounded-xl shadow space-y-3 border border-gray-300"
     >
       <input
         type="text"

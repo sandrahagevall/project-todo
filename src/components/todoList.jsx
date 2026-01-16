@@ -14,13 +14,17 @@ export const TodoList = ({ isAdding }) => {
   // Empty state handling
   if (todos.length === 0) {
     return (
-      <ul className="space-y-2 mt-0">
+      <div className="space-y-2 mt-0">
         <p className="text-center mb-2 text-gray-500">No todos available. Add a to-do to get started!</p>
 
-        {Array.from({ length: 4 }).map((_, index) => (
-          <TodoSkeleton key={index} />
-        ))}
-      </ul>
+        <ul className="space-y-2">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <li key={index}>
+              <TodoSkeleton />
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 

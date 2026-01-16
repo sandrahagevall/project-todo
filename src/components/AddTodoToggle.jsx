@@ -4,9 +4,10 @@ export const AddTodoToggle = ({ onAdd }) => {
       <button
         onClick={onAdd}
         type="button"
+        aria-label="Add a to-do"
         className="
           bg-white rounded-xl shadow p-4 w-full
-          hover:bg-gray-50 transition cursor-pointer
+          hover:bg-gray-50 transition cursor-pointer border border-gray-300
         "
       >
         <div className="flex items-center gap-3">
@@ -14,7 +15,7 @@ export const AddTodoToggle = ({ onAdd }) => {
             className="
               w-7 h-7
               rounded-full
-              bg-blue-500
+              bg-blue-700
               text-white
               flex items-center justify-center
               text-lg font-semibold
@@ -23,7 +24,7 @@ export const AddTodoToggle = ({ onAdd }) => {
             +
           </div>
 
-          <div className="text-blue-500 text-lg font-medium">
+          <div className="text-blue-700 text-lg font-medium">
             Add a to-do
           </div>
         </div>
