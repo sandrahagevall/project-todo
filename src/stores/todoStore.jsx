@@ -6,7 +6,7 @@ export const useTodoStore = create(
     (set) => ({
       todos: [],
       darkMode: false,
-      categories: ["General", "Work", "Home"],
+      categories: ["General", "Work", "Home", "Personal", "Family"],
 
       addTodo: (text, category = "General", dueDate = null) => {
         const newTodo = {

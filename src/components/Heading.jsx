@@ -32,14 +32,18 @@ export const Heading = () => {
               onClick={completeAllTodos}
               disabled={uncompleted === 0}
               className="
-                mt-2 
-                xl:mt-10 
-                p-1 
-                rounded-sm 
-                border-4 
-                border-double 
-                text-sm 
-                hover:text-blue-200 cursor-pointer
+                mt-2 xl:mt-10
+                px-3 py-1.5
+                text-sm
+                font-medium
+                rounded-md
+                border border-white/30
+                text-white
+                hover:bg-white/10
+                cursor-pointer
+                transition
+                disabled:opacity-40
+                disabled:cursor-not-allowed
               "
             >
               Complete all

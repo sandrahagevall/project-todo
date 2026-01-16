@@ -37,6 +37,8 @@ export const TodoForm = ({ onClose }) => {
           <option>General</option>
           <option>Work</option>
           <option>Home</option>
+          <option>Personal</option>
+          <option>Family</option>
         </select>
 
         <input
