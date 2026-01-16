@@ -1,4 +1,3 @@
-import React from "react"
 import { useTodoStore } from "../stores/todoStore"
 import { TodoItem } from "./TodoItem"
 import { TodoSkeleton } from "./TodoSkeleton"
@@ -11,11 +10,13 @@ export const TodoList = ({ isAdding }) => {
     return null
   }
 
-  // Empty state handling
+  // Empty state 
   if (todos.length === 0) {
     return (
-      <div className="space-y-2 mt-0">
-        <p className="text-center mb-2 text-gray-500">No todos available. Add a to-do to get started!</p>
+      <div className="mt-4">
+        <p className="text-center mb-4 text-gray-500">
+          No todos available. Add a to-do to get started!
+        </p>
 
         <ul className="space-y-2">
           {Array.from({ length: 4 }).map((_, index) => (

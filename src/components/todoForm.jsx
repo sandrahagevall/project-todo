@@ -18,14 +18,14 @@ export const TodoForm = ({ onClose }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 rounded-xl shadow space-y-3 border border-gray-300"
+      className="bg-white p-4 mt-4 rounded-xl shadow space-y-3 border border-gray-300"
     >
-      <input
-        type="text"
-        placeholder="What do you need to do?"
+      <textarea
         value={text}
+        rows={1}
+        placeholder="What do you need to do?"
         onChange={(e) => setText(e.target.value)}
-        className="w-full border rounded px-3 py-2"
+        className="w-full border rounded px-3 py-2 wrap-break-word resize-none"
       />
 
       <div className="flex gap-2">
@@ -51,13 +51,13 @@ export const TodoForm = ({ onClose }) => {
         <button
           type="button"
           onClick={onClose}
-          className="text-gray-500"
+          className="text-gray-500 cursor-pointer px-4 py-1 rounded hover:bg-gray-100 transition"
         >
           Cancel
         </button>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-1 rounded"
+          className="bg-blue-500 text-white px-4 py-1 rounded cursor-pointer hover:bg-blue-600 transition"
         >
           Save
         </button>
