@@ -27,6 +27,7 @@ export const TodoItem = ({ todo }) => {
       layout
       className="
         bg-white
+        dark:bg-gray-900
         rounded-xl 
         shadow-sm 
         hover:shadow-md 
@@ -61,7 +62,7 @@ export const TodoItem = ({ todo }) => {
             type="checkbox"
             checked={todo.completed}
             onChange={() => toggleTodo(todo.id)}
-            className="h-5 w-5 accent-green-500 cursor-pointer"
+            className="h-5 w-5 accent-lime-500 cursor-pointer"
           />
           <span className="sr-only">
             Mark todo as finished: {todo.text}
@@ -81,6 +82,7 @@ export const TodoItem = ({ todo }) => {
             font-medium
             cursor-pointer
             wrap-break-word
+            dark:text-white
             ${expanded ? "" : "line-clamp-2"}
             ${todo.completed ? "line-through text-gray-400" : "text-gray-900"}
           `}
@@ -115,6 +117,7 @@ export const TodoItem = ({ todo }) => {
             sm:row-start-2
             text-sm
             text-gray-600
+            dark:text-gray-300
             w-fit
           "
         >
@@ -131,6 +134,7 @@ export const TodoItem = ({ todo }) => {
             sm:whitespace-nowrap
             text-xs
             text-gray-500
+            dark:text-gray-400
           "
         >
           Created: {createdAt}
@@ -148,6 +152,7 @@ export const TodoItem = ({ todo }) => {
               text-xs 
               font-medium 
               text-gray-500 
+              dark:text-gray-400
               wrap-break-word
             "
           >

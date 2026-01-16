@@ -18,7 +18,14 @@ export const TodoForm = ({ onClose }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 mt-4 rounded-xl shadow space-y-3 border border-gray-300"
+      className="
+        bg-white 
+        dark:bg-blue-900 
+        p-4 mt-4 
+        rounded-xl 
+        shadow space-y-3 
+        border border-gray-300
+      "
     >
       <textarea
         value={text}
@@ -28,11 +35,19 @@ export const TodoForm = ({ onClose }) => {
         className="w-full border rounded px-3 py-2 wrap-break-word resize-none"
       />
 
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="flex-1 border rounded px-2 py-2"
+          className="
+            flex-1 border 
+            rounded px-2 py-2 
+            dark:bg-blue-900
+            dark:text-gray-100
+            dark:border-gray-100
+            scheme-light
+            dark:scheme-dark
+          "
         >
           <option>General</option>
           <option>Work</option>
@@ -53,7 +68,7 @@ export const TodoForm = ({ onClose }) => {
         <button
           type="button"
           onClick={onClose}
-          className="text-gray-500 cursor-pointer px-4 py-1 rounded hover:bg-gray-100 transition"
+          className="text-gray-500 dark:text-gray-400 cursor-pointer px-4 py-1 rounded hover:bg-gray-100 transition"
         >
           Cancel
         </button>

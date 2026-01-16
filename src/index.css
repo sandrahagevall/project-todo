@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 .grid-bg {
@@ -9,6 +11,14 @@
   background-image:
     linear-gradient(to right, #e5e7eb 1px, transparent 1px),
     linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .grid-bg {
+  background-color: #111827;
+  background-image:
+    linear-gradient(to right, #0e0e0f 1px, transparent 1px),
+    linear-gradient(to bottom, #0e0e0f 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

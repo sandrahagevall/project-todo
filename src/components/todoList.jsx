@@ -14,8 +14,8 @@ export const TodoList = ({ isAdding }) => {
   if (todos.length === 0) {
     return (
       <div className="mt-4">
-        <p className="text-center mb-4 text-gray-500">
-          No todos available. Add a to-do to get started!
+        <p className="text-center mb-4 text-gray-500 dark:text-white">
+          No to-dos available. Add a to-do to get started!
         </p>
 
         <ul className="space-y-2">

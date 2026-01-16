@@ -6,7 +6,8 @@ export const AddTodoToggle = ({ onAdd }) => {
         type="button"
         aria-label="Add a to-do"
         className="
-          bg-white rounded-xl shadow p-4 w-full
+          relative z-10
+          bg-white dark:bg-gray-900 rounded-xl shadow p-4 w-full
           hover:bg-gray-50 transition cursor-pointer border border-gray-300
         "
       >
@@ -16,15 +17,19 @@ export const AddTodoToggle = ({ onAdd }) => {
               w-7 h-7
               rounded-full
               bg-blue-700
+              dark:bg-lime-500
               text-white
               flex items-center justify-center
               text-lg font-semibold
+              leading-none
             "
           >
-            +
+            <span className="mb-2 text-2xl">
+              +
+            </span>
           </div>
 
-          <div className="text-blue-700 text-lg font-medium">
+          <div className="text-blue-700 dark:text-lime-500 text-lg font-medium">
             Add a to-do
           </div>
         </div>
